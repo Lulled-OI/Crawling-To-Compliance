@@ -1,0 +1,98 @@
+# AWS Credentials and Config
+.aws/
+aws-credentials.txt
+*.pem
+*.key
+access-keys.txt
+credentials.json
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.test
+
+# Sensitive Data
+**/sensitive-data/
+**/real-data/
+passwords.txt
+secrets.txt
+
+# Temporary Files
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+terraform.tfplan
+
+# CloudFormation
+*.template
+packaged-template.yaml
+
+# Log Files
+*.log
+logs/
+**/*.log
+
+# Scanner Results (may contain sensitive info)
+scan-results-detailed/
+vulnerability-reports-raw/
+
+# Backup Files
+*.backup
+*.bak
+*.old
+
+# Personal Notes (may contain sensitive observations)
+personal-notes.md
+private-thoughts.txt
+
+# Test Data That Might Be Sensitive
+test-data-real/
+production-exports/
+
+# Compliance Documents with Sensitive Info
+audit-evidence-confidential/
+internal-assessments/
