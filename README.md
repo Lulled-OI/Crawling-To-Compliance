@@ -1,4 +1,4 @@
-# Crawling-To-Compliance 🛡️
+# Crawling-To-Compliance 
 
 **Cybersecurity GRC Learning Lab**
 
