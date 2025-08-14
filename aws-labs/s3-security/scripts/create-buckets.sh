@@ -15,7 +15,7 @@ set -e  # Exit if anything fails
 
 # Configuration Variables
 REGION="us-east-1"
-NAME_SUFFIX="[yourname]"  # REPLACE WITH YOUR IDENTIFIER
+NAME_SUFFIX="lulled-lab"  # Your lab identifier
 DATE_STAMP=$(date +%Y%m%d)
 
 # Bucket Names
@@ -62,11 +62,8 @@ check_prerequisites() {
         exit 1
     fi
     
-    # Check if name suffix was replaced
-    if [[ "$NAME_SUFFIX" == "[yourname]" ]]; then
-        log_error "You need to replace [yourname] with your identifier in the script."
-        exit 1
-    fi
+    # Name suffix is already set to lulled-lab
+    log_info "Using identifier: $NAME_SUFFIX"
     
     log_success "Prerequisites look good!"
 }

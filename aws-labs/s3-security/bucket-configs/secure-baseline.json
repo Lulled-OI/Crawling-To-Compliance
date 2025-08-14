@@ -1,0 +1,38 @@
+{
+  "bucket_name": "grc-secure-baseline-lulled-lab",
+  "description": "Secure baseline configuration - this is how S3 should be set up",
+  "security_settings": {
+    "public_access_block": {
+      "block_public_acls": true,
+      "ignore_public_acls": true,
+      "block_public_policy": true,
+      "restrict_public_buckets": true
+    },
+    "encryption": {
+      "enabled": true,
+      "type": "AES256",
+      "description": "Server-side encryption with S3-managed keys"
+    },
+    "versioning": {
+      "enabled": true,
+      "description": "Keep multiple versions of objects for recovery"
+    },
+    "access_logging": {
+      "enabled": true,
+      "description": "Log all access requests for audit trail"
+    },
+    "lifecycle_policy": {
+      "enabled": true,
+      "description": "Automatically manage object lifecycle and costs"
+    },
+    "mfa_delete": {
+      "enabled": true,
+      "description": "Require MFA to delete objects (extra protection)"
+    }
+  },
+  "compliance_mappings": {
+    "NIST": ["AC-3", "AU-2", "SC-28"],
+    "ISO27001": ["A.9.1.1", "A.12.3.1", "A.10.1.1"],
+    "SOC2": ["CC6.1", "CC6.7"]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "bucket_name": "grc-vulnerable-lab-lulled-lab",
+  "description": "INTENTIONALLY VULNERABLE - for learning purposes only",
+  "warning": "NEVER PUT REAL DATA IN THIS BUCKET!",
+  "vulnerable_settings": {
+    "public_access_block": {
+      "block_public_acls": false,
+      "ignore_public_acls": false,
+      "block_public_policy": false,
+      "restrict_public_buckets": false,
+      "risk": "HIGH - Bucket contents can be accessed by anyone on the internet"
+    },
+    "encryption": {
+      "enabled": false,
+      "risk": "HIGH - Data stored in plain text, readable if compromised"
+    },
+    "versioning": {
+      "enabled": false,
+      "risk": "MEDIUM - No recovery options if files are deleted or corrupted"
+    },
+    "access_logging": {
+      "enabled": false,
+      "risk": "MEDIUM - No audit trail of who accessed what and when"
+    },
+    "bucket_policy": {
+      "overly_permissive": true,
+      "allows_public_read": true,
+      "risk": "CRITICAL - Anyone can read bucket contents"
+    },
+    "cors_configuration": {
+      "missing_restrictions": true,
+      "allows_all_origins": true,
+      "risk": "MEDIUM - Vulnerable to cross-site attacks"
+    }
+  },
+  "learning_objectives": [
+    "Understand what makes S3 buckets vulnerable",
+    "Practice identifying security misconfigurations",
+    "Learn to assess risk levels of different vulnerabilities",
+    "Practice security scanning and assessment"
+  ],
+  "attack_scenarios": [
+    "Data breach through public access",
+    "Malicious file uploads",
+    "Data tampering without detection",
+    "Compliance violations"
+  ]
+}

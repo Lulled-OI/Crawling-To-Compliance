@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureConnections",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::grc-secure-baseline-lulled-lab",
+        "arn:aws:s3:::grc-secure-baseline-lulled-lab/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AllowOnlyEncryptedUploads",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::grc-secure-baseline-lulled-lab/*",
+      "Condition": {
+        "StringNotEquals": {
+          "s3:x-amz-server-side-encryption": "AES256"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAuthenticatedAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::ACCOUNT-ID:root"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::grc-secure-baseline-lulled-lab",
+        "arn:aws:s3:::grc-secure-baseline-lulled-lab/*"
+      ]
+    }
+  ],
+  "description": "Secure bucket policy that enforces HTTPS and encryption",
+  "security_features": [
+    "Denies all non-HTTPS connections",
+    "Requires encryption for all uploads",
+    "Restricts access to authenticated users only"
+  ]
+}
